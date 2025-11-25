@@ -1,0 +1,21 @@
+<div class="list-group">
+  <% @articles.each do |article| %>
+    <div class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <h4>
+          <%= link_to article.title, article_path(article), class: "text-decoration-none" %>
+        </h4>
+        <p class="text-muted mb-0">
+          <%= truncate(article.content, length: 120) %>
+        </p>
+      </div>
+      <div>
+        <%= link_to "Edit", edit_article_path(article), class: "btn btn-sm btn-outline-secondary me-2" %>
+        <%= link_to "Delete", article_path(article),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: "btn btn-sm btn-outline-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+ }
+
+ .article h2 a {
+  text-decoration: none;
+}
+
+.article h2 a:hover {
+  text-decoration: underline;
+}
